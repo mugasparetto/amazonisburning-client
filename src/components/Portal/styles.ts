@@ -9,7 +9,7 @@ interface ContainerProps {
 export const Container = styled.div<ContainerProps>`
   cursor: ${(props) => (props.open ? 'auto' : 'pointer')};
   background: ${colors.neutral.white};
-  padding: 2.5rem;
+  padding: ${(props) => (props.open ? 0 : '2.5rem')};
   height: ${(props) => (props.open ? '100vh' : 'auto')};
   width: ${(props) => (props.open ? '50vw' : 'auto')};
 

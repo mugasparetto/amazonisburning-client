@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 
 import { Container, CTA } from './styles';
 import ArrowLeft from '../../assets/arrow-left.svg';
-import Close from '../../assets/close.svg';
+import PortalOpen from './PortalOpen';
 
 interface PortalProps {
   portalToggle: (value: boolean) => void;
@@ -31,12 +31,7 @@ const Portal: React.FC<PortalProps> = ({ portalToggle }) => {
           <img src={ArrowLeft} />
         </CTA>
       ) : (
-        <div>
-          <h2>Map</h2>
-          <button onClick={closePortal}>
-            <img src={Close} />
-          </button>
-        </div>
+        <PortalOpen portalToggle={closePortal} />
       )}
     </Container>
   );
