@@ -5,6 +5,10 @@ import Tooltip from '../../components/Tooltip';
 import bg from '../../assets/amazonburning.jpeg';
 import { colors } from '../../constants/colors';
 
+interface ContentProps {
+  open: boolean;
+}
+
 export const Container = styled.main`
   height: 100vh;
   width: 100%;
@@ -20,12 +24,19 @@ export const Container = styled.main`
   background-size: cover;
 `;
 
-export const Content = styled.div`
+export const Content = styled.div<ContentProps>`
   color: ${colors.neutral.white};
   position: absolute;
   left: 6rem;
   top: 50%;
   transform: translate(0, -50%);
+
+  h1 {
+    transform: ${(props) => (props.open ? 'scale(0.5)' : 'scale(1)')};
+    margin-bottom: ${(props) => props.open && '-1.5rem'};
+    transform-origin: bottom left;
+    transition: all 0.4s;
+  }
 `;
 
 export const Description = styled.h3`

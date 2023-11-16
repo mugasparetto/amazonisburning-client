@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 import { Container, Content, Description, Help } from './styles';
+import Portal from '../../components/Portal';
+
 import HelpIcon from '../../assets/help-icon.svg';
 import { socket } from '../../socket';
 
 const Main: React.FC = () => {
   const [wildfiresCount, setWildfiresCount] = useState(0);
+  const [portalOpen, setPortalOpen] = useState(false);
 
   useEffect(() => {
     function updateWildfiresCount(value: number) {
@@ -22,9 +25,13 @@ const Main: React.FC = () => {
     };
   }, []);
 
+  const handlePortalToggle = useCallback((value: boolean) => {
+    setPortalOpen(value);
+  }, []);
+
   return (
     <Container>
-      <Content>
+      <Content open={portalOpen}>
         <h1>{wildfiresCount}</h1>
         <Description>
           Fires burning in the Amazon rainforest since this exhibition started
@@ -33,6 +40,7 @@ const Main: React.FC = () => {
           <img style={{ opacity: 0.8 }} src={HelpIcon} alt={'Question mark'} />
         </Help>
       </Content>
+      <Portal portalToggle={handlePortalToggle} />
     </Container>
   );
 };

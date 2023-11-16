@@ -55,6 +55,8 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+    background: none;
+    border: none;
   }
 
   a:link, a:visited, a:focus, a:hover, a:active {
