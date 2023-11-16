@@ -48,6 +48,7 @@ export default createGlobalStyle`
     font-size: 3rem;
     text-transform: uppercase;
     letter-spacing: 0.18rem;
+    margin-bottom: 3rem;
   }
 
   h3 {
