@@ -34,7 +34,7 @@ const Main: React.FC = () => {
       <Content open={portalOpen}>
         <h1>{wildfiresCount}</h1>
         <Description>
-          Fires burning in the Amazon rainforest since this exhibition started
+          Fires burning in the Amazon rainforest since this tutorial started
         </Description>
         <Help>
           <img style={{ opacity: 0.8 }} src={HelpIcon} alt={'Question mark'} />
