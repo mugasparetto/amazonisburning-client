@@ -57,7 +57,7 @@ const PortalOpen: React.FC<PortalOpenProps> = ({ portalToggle }) => {
             portalToggle(false);
           }}
         >
-          <img src={Close} />
+          <img src={Close} alt="Close icon" />
         </button>
         <NavContent id="map" activeTab={activeTab}>
           <Map />

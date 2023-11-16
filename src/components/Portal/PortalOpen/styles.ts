@@ -22,4 +22,11 @@ export const Content = styled.div`
   /* background: blue; */
   padding: 4rem;
   width: 100%;
+  position: relative;
+
+  button {
+    position: absolute;
+    right: 4rem;
+    top: 4.5rem;
+  }
 `;

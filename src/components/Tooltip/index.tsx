@@ -16,6 +16,7 @@ const Tooltip: React.FC<TooltipProps> = ({ children, className }) => {
         <a
           href="http://terrabrasilis.dpi.inpe.br/queimadas/portal/"
           target="_blank"
+          rel="noreferrer"
         >
           Brazilian government
         </a>

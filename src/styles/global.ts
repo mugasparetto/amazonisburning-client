@@ -46,6 +46,8 @@ export default createGlobalStyle`
   h2 {
     font-weight: 500;
     font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18rem;
   }
 
   h3 {

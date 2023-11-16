@@ -28,7 +28,7 @@ const Portal: React.FC<PortalProps> = ({ portalToggle }) => {
       {!open ? (
         <CTA>
           <span>i want to know more</span>
-          <img src={ArrowLeft} />
+          <img src={ArrowLeft} alt="Arrow left" />
         </CTA>
       ) : (
         <PortalOpen portalToggle={closePortal} />
