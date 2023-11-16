@@ -12,6 +12,7 @@ export const Container = styled.li<ContainerProps>`
   flex-grow: 1;
   position: relative;
   width: 3.5rem;
+  cursor: pointer;
 
   span {
     white-space: nowrap;
