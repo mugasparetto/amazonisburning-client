@@ -6,8 +6,8 @@ export const Container = styled.div`
 `;
 
 export const Navigation = styled.nav`
-  background: red;
-  padding: 2.5rem;
+  padding: 0 2.5rem;
+  border-right: solid 2px black;
 
   ul {
     list-style: none;
@@ -15,15 +15,11 @@ export const Navigation = styled.nav`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
-    li {
-      transform: rotate(-90deg);
-    }
   }
 `;
 
 export const Content = styled.div`
-  background: blue;
+  /* background: blue; */
   padding: 4rem;
   width: 100%;
 `;

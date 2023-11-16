@@ -6,6 +6,7 @@ interface NavItemProps {
   title: string;
   activeTab: string;
   setActiveTab: (value: string) => void;
+  style?: object;
 }
 
 const NavItem: React.FC<NavItemProps> = ({
@@ -13,6 +14,7 @@ const NavItem: React.FC<NavItemProps> = ({
   title,
   activeTab,
   setActiveTab,
+  style = {},
 }) => {
   const handleClick = useCallback(() => {
     console.log(id);
@@ -20,8 +22,8 @@ const NavItem: React.FC<NavItemProps> = ({
   }, []);
 
   return (
-    <Container active={activeTab === id} onClick={handleClick}>
-      {title}
+    <Container active={activeTab === id} style={style} onClick={handleClick}>
+      <span>{title}</span>
     </Container>
   );
 };

@@ -26,24 +26,28 @@ const PortalOpen: React.FC<PortalOpenProps> = ({ portalToggle }) => {
             id="solutions"
             activeTab={activeTab}
             setActiveTab={setActiveTab}
+            style={{ flexBasis: '30%' }}
           />
           <NavItem
             title="why so many fires"
             id="fires"
             activeTab={activeTab}
             setActiveTab={setActiveTab}
+            style={{ flexBasis: '30%' }}
           />
           <NavItem
             title="methodology"
             id="methodology"
             activeTab={activeTab}
             setActiveTab={setActiveTab}
+            style={{ flexBasis: '21%' }}
           />
           <NavItem
             title="map"
             id="map"
             activeTab={activeTab}
             setActiveTab={setActiveTab}
+            style={{ flexBasis: '7%' }}
           />
         </ul>
       </Navigation>
