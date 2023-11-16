@@ -6,7 +6,7 @@ export const Container = styled.div`
 `;
 
 export const Navigation = styled.nav`
-  padding: 0 2.5rem;
+  padding: 2.5rem;
   border-right: solid 2px black;
 
   ul {
