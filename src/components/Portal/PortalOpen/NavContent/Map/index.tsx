@@ -1,6 +1,8 @@
 import React from 'react';
-import { MapContainer, TileLayer } from 'react-leaflet';
+import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+
+import { amazon } from '../../../../../assets/amazon';
 
 import {} from './styles';
 
@@ -14,6 +16,7 @@ const Map: React.FC = () => {
         zoom={4.2}
         style={{ height: '100%' }}
       >
+        <GeoJSON data={amazon} />;
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       </MapContainer>
     </>
