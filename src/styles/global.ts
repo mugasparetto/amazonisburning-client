@@ -37,6 +37,10 @@ export default createGlobalStyle`
     --webkit-font-smothing: atialiased;
   }
 
+  body {
+    overflow: hidden;
+  }
+
   h1 {
     font-weight: bold;
     font-size: 20rem;
@@ -56,6 +60,12 @@ export default createGlobalStyle`
     font-size: 2.5rem;
   }
 
+  h4 {
+    margin: 1.5rem 0 1rem;
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
   button {
     cursor: pointer;
     background: none;
@@ -64,5 +74,19 @@ export default createGlobalStyle`
 
   a:link, a:visited, a:focus, a:hover, a:active {
     color: ${colors.neutral.darkest};
-}
+  }
+
+  p, ol li {
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem; 
+  }
+
+  ol {
+    padding-left: 1.5rem;
+  }
+
+  h4 + p {
+    margin-top: 0.5rem;
+  }
 `;
