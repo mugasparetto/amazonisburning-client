@@ -14,7 +14,13 @@ const Map: React.FC = () => {
       <MapContainer
         center={[-10.535474, -61.187286]}
         zoom={4.2}
+        minZoom={2.5}
         style={{ height: '100%' }}
+        maxBoundsViscosity={1.0}
+        maxBounds={[
+          [-90, -180],
+          [90, 180],
+        ]}
       >
         <GeoJSON data={amazon} />;
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
