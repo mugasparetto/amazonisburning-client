@@ -22,7 +22,7 @@ const NavItem: React.FC<NavItemProps> = ({
   }, [id, setActiveTab]);
 
   return (
-    <Container active={activeTab === id} style={style} onClick={handleClick}>
+    <Container $active={activeTab === id} style={style} onClick={handleClick}>
       <span>{title}</span>
     </Container>
   );
