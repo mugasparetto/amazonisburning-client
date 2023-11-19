@@ -12,7 +12,7 @@ const Tooltip: React.FC<TooltipProps> = ({ children, className }) => {
     <Container className={className}>
       {children}
       <span>
-        The data shown was gathered from the{' '}
+        The data shown is being gathered in near real-time from the{' '}
         <a
           href="http://terrabrasilis.dpi.inpe.br/queimadas/portal/"
           target="_blank"
@@ -20,8 +20,7 @@ const Tooltip: React.FC<TooltipProps> = ({ children, className }) => {
         >
           Brazilian government
         </a>
-        , via satellite monitoring, using the satellite GOES-16 as reference.
-        Repeated focuses are not counted more than once.
+        . Repeated focuses are not counted more than once.
       </span>
     </Container>
   );

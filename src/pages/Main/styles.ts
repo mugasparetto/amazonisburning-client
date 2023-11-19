@@ -47,3 +47,19 @@ export const Description = styled.h3`
 export const Help = styled(Tooltip)`
   margin-top: 1rem;
 `;
+
+export const TimeContainer = styled.div`
+  position: absolute;
+  bottom: 4rem;
+  left: 6rem;
+
+  > span {
+    color: ${colors.neutral.white};
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.09rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: block;
+  }
+`;

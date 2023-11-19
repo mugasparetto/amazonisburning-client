@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
-import { Container, Content, Description, Help } from './styles';
+import { Container, Content, Description, Help, TimeContainer } from './styles';
 import Portal from '../../components/Portal';
+import TimeElapsed from '../../components/TimeElapsed';
 
 import HelpIcon from '../../assets/help-icon.svg';
 import { socket } from '../../socket';
@@ -33,12 +34,16 @@ const Main: React.FC = () => {
       <Content open={portalOpen}>
         <h1>{wildfiresCount}</h1>
         <Description>
-          Fires burning in the Amazon rainforest since this tutorial started
+          Fires burning in the Amazon rainforest since [ADD MESSAGE HERE]
         </Description>
         <Help>
           <img style={{ opacity: 0.8 }} src={HelpIcon} alt={'Question mark'} />
         </Help>
       </Content>
+      <TimeContainer>
+        <span>time elapsed</span>
+        <TimeElapsed />
+      </TimeContainer>
       <Portal portalToggle={handlePortalToggle} />
     </Container>
   );
