@@ -5,12 +5,4 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   overflow: auto;
-
-  /* &::-webkit-scrollbar {
-    width: 2rem;
-  } */
-
-  .leaflet-bottom.leaflet-right {
-    display: none;
-  }
 `;
