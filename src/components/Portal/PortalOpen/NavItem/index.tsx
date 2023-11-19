@@ -17,7 +17,6 @@ const NavItem: React.FC<NavItemProps> = ({
   style = {},
 }) => {
   const handleClick = useCallback(() => {
-    console.log(id);
     setActiveTab(id);
   }, [id, setActiveTab]);
 

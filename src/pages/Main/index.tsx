@@ -12,7 +12,6 @@ const Main: React.FC = () => {
 
   useEffect(() => {
     function updateWildfiresCount(value: number) {
-      console.log(value);
       setWildfiresCount(value);
     }
 

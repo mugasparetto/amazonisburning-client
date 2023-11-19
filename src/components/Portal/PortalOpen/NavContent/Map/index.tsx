@@ -29,10 +29,6 @@ const Map: React.FC = () => {
       });
   }, []);
 
-  useEffect(() => {
-    console.log(loading);
-  }, [loading]);
-
   return (
     <>
       <h2>Map</h2>
