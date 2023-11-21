@@ -33,18 +33,6 @@ const Fires: React.FC = () => {
         src={FiresDiagram}
         alt="Diagram explaining the feedback loop happening in the Amazon rainforest"
       />
-      <p style={{ marginTop: '1rem' }}>
-        The fires in the Amazon pose a significant risk to the forest itself and
-        the world. It is estimated that 15% of global terrestrial photosynthesis
-        occurs in the Amazon Rainforest (Field et al., 1998), and the biomass
-        found there contains 100 billion tons of carbon (Malhi et al., 2008),
-        which is equivalent to a decade's worth of carbon emissions (IPAM
-        Amazônia, 2021). Therefore, protecting the forest is crucial in
-        preventing climate change from worsening. Until today, the forest has
-        been acting as a carbon sink, removing carbon from the atmosphere.
-        However, the fires and deforestation can transform it into a carbon
-        emitter - an irreversible state (Gatti et al., 2021).
-      </p>
     </>
   );
 };

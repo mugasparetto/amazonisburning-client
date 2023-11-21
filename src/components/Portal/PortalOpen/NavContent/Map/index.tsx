@@ -1,5 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, GeoJSON, CircleMarker } from 'react-leaflet';
+import React, { useEffect, useState, useCallback } from 'react';
+import {
+  MapContainer,
+  TileLayer,
+  GeoJSON,
+  CircleMarker,
+  Tooltip,
+} from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import 'leaflet/dist/leaflet.css';
 
@@ -29,6 +35,30 @@ const Map: React.FC = () => {
       });
   }, []);
 
+  const calculatePointSize = useCallback((count: number) => {
+    if (count >= 1 && count < 20) {
+      return 2;
+    } else if (count >= 20 && count < 60) {
+      return 6;
+    } else if (count >= 60 && count < 100) {
+      return 10;
+    } else if (count >= 100) {
+      return 14;
+    }
+  }, []);
+
+  const calculatePointColor = useCallback((count: number) => {
+    if (count >= 1 && count < 20) {
+      return '#F3AB8C';
+    } else if (count >= 1 && count < 60) {
+      return '#FC7A41';
+    } else if (count >= 60 && count < 100) {
+      return '#AF4517';
+    } else if (count >= 100) {
+      return '#5A2006';
+    }
+  }, []);
+
   return (
     <>
       <h2>Map</h2>
@@ -50,19 +80,42 @@ const Map: React.FC = () => {
             data={amazon}
             pathOptions={{
               stroke: false,
-              color: '#FC7A41',
+              color: '#FFD28F',
+              fillOpacity: 0.3,
             }}
             interactive={false}
           />
-          {/* <MarkerClusterGroup> */}
+          {/* <MarkerClusterGroup
+            disableClusteringAtZoom={5}
+            spiderfyOnMaxZoom={false}
+          > */}
           {wildfires.map(([lat, long, _, count]) => (
             <CircleMarker
               center={[lat, long]}
-              radius={2 + 2 * count}
+              radius={calculatePointSize(count)}
               key={`${lat},${long}`}
-              pathOptions={{ stroke: false, color: '#FC7A41', fillOpacity: 1 }}
-              interactive={false}
-            />
+              pathOptions={{
+                stroke: false,
+                color: '#222',
+                fillColor: calculatePointColor(count),
+                weight: 1,
+                fillOpacity: 0.6,
+              }}
+              eventHandlers={{
+                mouseover: ({ target }) => {
+                  target.setStyle({
+                    stroke: true,
+                  });
+                },
+                mouseout: ({ target }) => {
+                  target.setStyle({ stroke: false });
+                },
+              }}
+            >
+              <Tooltip>
+                Recurrence: {count} {count > 1 ? 'times' : 'time'}
+              </Tooltip>
+            </CircleMarker>
           ))}
           {/* </MarkerClusterGroup> */}
           <TileLayer

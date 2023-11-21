@@ -12,15 +12,13 @@ const Solutions: React.FC = () => {
       <ol>
         <li>
           <strong>Designation of public forests:</strong> the non-designated
-          public forests are the ones mainly affected by deforestation, as these
-          lands are under the government’s domain and are awaiting a status of
-          either ‘land to be conserved’ or ‘land to be sustainably used’. This
-          lack of status encourages illegal possession of the land and its
-          uncontrolled deforestation, also known as grilagem. There is also a
-          lack of oversight in these regions, so illegal activities are never
-          punished. Thus, designating the public forests as a conservational
-          unit, indigenous land, or any other category would ensure their
-          appropriate usage.
+          public forests are the ones mainly affected by deforestation, as they
+          are awaiting a status of either ‘land to be conserved’ or ‘land to be
+          sustainably used’, encouraging illegal possession of the land and its
+          uncontrolled deforestation. There is a lack of oversight in these
+          regions and designating the public forests as a conservational unit,
+          indigenous land, or any other category would ensure their appropriate
+          usage.
         </li>
         <li>
           <strong>Conservation incentives for private areas:</strong> measures
