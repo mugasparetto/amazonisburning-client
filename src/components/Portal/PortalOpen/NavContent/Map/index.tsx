@@ -98,7 +98,7 @@ const Map: React.FC = () => {
                 stroke: false,
                 color: '#222',
                 fillColor: calculatePointColor(count),
-                weight: 1,
+                weight: 2,
                 fillOpacity: 0.6,
               }}
               eventHandlers={{
