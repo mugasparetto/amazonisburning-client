@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 import Tooltip from '../../components/Tooltip';
 
-import bg from '../../assets/amazonburning.jpeg';
 import { colors } from '../../constants/colors';
 
 interface ContentProps {
@@ -14,14 +13,25 @@ export const Container = styled.main`
   width: 100%;
   position: relative;
   background-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0)
-    ),
-    url(${bg});
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0)
+  );
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  #background-video {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
 `;
 
 export const Content = styled.div<ContentProps>`

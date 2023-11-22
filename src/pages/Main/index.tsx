@@ -4,6 +4,7 @@ import { Container, Content, Description, Help, TimeContainer } from './styles';
 import Portal from '../../components/Portal';
 import TimeElapsed from '../../components/TimeElapsed';
 
+import bg from '../../assets/background-video.mp4';
 import HelpIcon from '../../assets/help-icon.svg';
 import { socket } from '../../socket';
 
@@ -31,10 +32,13 @@ const Main: React.FC = () => {
 
   return (
     <Container>
+      <video id="background-video" autoPlay loop muted>
+        <source src={bg} type="video/mp4" />
+      </video>
       <Content open={portalOpen}>
         <h1>{wildfiresCount}</h1>
         <Description>
-          Fires burning in the Amazon rainforest since [ADD MESSAGE HERE]
+          Fires burning in the Amazon rainforest since Sunday morning
         </Description>
         <Help>
           <img style={{ opacity: 0.8 }} src={HelpIcon} alt={'Question mark'} />
