@@ -22,18 +22,11 @@ const PortalOpen: React.FC<PortalOpenProps> = ({ portalToggle }) => {
       <Navigation>
         <ul>
           <NavItem
-            title="possible solutions"
-            id="solutions"
+            title="map"
+            id="map"
             activeTab={activeTab}
             setActiveTab={setActiveTab}
-            style={{ flexBasis: '30%' }}
-          />
-          <NavItem
-            title="why so many fires"
-            id="fires"
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-            style={{ flexBasis: '30%' }}
+            style={{ flexBasis: '7%' }}
           />
           <NavItem
             title="methodology"
@@ -43,11 +36,18 @@ const PortalOpen: React.FC<PortalOpenProps> = ({ portalToggle }) => {
             style={{ flexBasis: '21%' }}
           />
           <NavItem
-            title="map"
-            id="map"
+            title="why so many fires"
+            id="fires"
             activeTab={activeTab}
             setActiveTab={setActiveTab}
-            style={{ flexBasis: '7%' }}
+            style={{ flexBasis: '30%' }}
+          />
+          <NavItem
+            title="possible solutions"
+            id="solutions"
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+            style={{ flexBasis: '30%' }}
           />
         </ul>
       </Navigation>
@@ -63,7 +63,7 @@ const PortalOpen: React.FC<PortalOpenProps> = ({ portalToggle }) => {
           <Map />
         </NavContent>
         <NavContent id="methodology" activeTab={activeTab}>
-          <Methodology />
+          <Methodology setActiveTab={setActiveTab} />
         </NavContent>
         <NavContent id="fires" activeTab={activeTab}>
           <Fires />
