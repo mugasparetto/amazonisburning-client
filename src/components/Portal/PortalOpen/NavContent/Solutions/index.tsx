@@ -6,8 +6,16 @@ const Solutions: React.FC = () => {
     <>
       <h2>Possible solutions</h2>
       <p>
-        There are guidelines (linkar) with four suggestions on how to fight the
-        Amazon’s deforestation. Here, we present a sneak peek on the topics:
+        There are{' '}
+        <a
+          href="https://ipam.org.br/wp-content/uploads/2023/03/Amazoniar-Solucoes-para-o-desmatamento-na-Amazonia-VF.pdf"
+          target="_blank"
+          rel="noreferrer"
+        >
+          guidelines
+        </a>{' '}
+        with four suggestions on how to fight the Amazon’s deforestation. Here,
+        we present a sneak peek on the topics:
       </p>
       <ol>
         <li>

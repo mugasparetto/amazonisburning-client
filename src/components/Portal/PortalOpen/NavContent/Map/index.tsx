@@ -85,39 +85,39 @@ const Map: React.FC = () => {
             }}
             interactive={false}
           />
-          {/* <MarkerClusterGroup
+          <MarkerClusterGroup
             disableClusteringAtZoom={5}
             spiderfyOnMaxZoom={false}
-          > */}
-          {wildfires.map(([lat, long, _, count]) => (
-            <CircleMarker
-              center={[lat, long]}
-              radius={calculatePointSize(count)}
-              key={`${lat},${long}`}
-              pathOptions={{
-                stroke: false,
-                color: '#222',
-                fillColor: calculatePointColor(count),
-                weight: 2,
-                fillOpacity: 0.6,
-              }}
-              eventHandlers={{
-                mouseover: ({ target }) => {
-                  target.setStyle({
-                    stroke: true,
-                  });
-                },
-                mouseout: ({ target }) => {
-                  target.setStyle({ stroke: false });
-                },
-              }}
-            >
-              <Tooltip>
-                Recurrence: {count} {count > 1 ? 'times' : 'time'}
-              </Tooltip>
-            </CircleMarker>
-          ))}
-          {/* </MarkerClusterGroup> */}
+          >
+            {wildfires.map(([lat, long, _, count]) => (
+              <CircleMarker
+                center={[lat, long]}
+                radius={calculatePointSize(count)}
+                key={`${lat},${long}`}
+                pathOptions={{
+                  stroke: false,
+                  color: '#222',
+                  fillColor: calculatePointColor(count),
+                  weight: 2,
+                  fillOpacity: 0.6,
+                }}
+                eventHandlers={{
+                  mouseover: ({ target }) => {
+                    target.setStyle({
+                      stroke: true,
+                    });
+                  },
+                  mouseout: ({ target }) => {
+                    target.setStyle({ stroke: false });
+                  },
+                }}
+              >
+                <Tooltip>
+                  Recurrence: {count} {count > 1 ? 'times' : 'time'}
+                </Tooltip>
+              </CircleMarker>
+            ))}
+          </MarkerClusterGroup>
           <TileLayer
             url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
             attribution="Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ"
