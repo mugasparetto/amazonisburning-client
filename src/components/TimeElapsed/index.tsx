@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 
-import { Container, TimeBox } from './styles';
+import { Container, TimeModule } from './styles';
 
 const initialDate = new Date('2023-11-19T08:00:00.000Z');
 
@@ -19,10 +19,10 @@ const TimeElapsed: React.FC = () => {
         new Date().getTime() - initialDate.getTime()
       );
       setTimeElapsed({
-        days: duration.days().toString().padStart(2, '0'),
-        hours: duration.hours().toString().padStart(2, '0'),
-        minutes: duration.minutes().toString().padStart(2, '0'),
-        seconds: duration.seconds().toString().padStart(2, '0'),
+        days: duration.days().toString(),
+        hours: duration.hours().toString(),
+        minutes: duration.minutes().toString(),
+        seconds: duration.seconds().toString(),
       });
     }, 1000);
     return () => {
@@ -32,22 +32,22 @@ const TimeElapsed: React.FC = () => {
 
   return (
     <Container>
-      <TimeBox>
+      <TimeModule>
         <span>{timeElapsed.days}</span>
         <span>days</span>
-      </TimeBox>
-      <TimeBox>
+      </TimeModule>
+      <TimeModule>
         <span>{timeElapsed.hours}</span>
         <span>hours</span>
-      </TimeBox>
-      <TimeBox>
+      </TimeModule>
+      <TimeModule>
         <span>{timeElapsed.minutes}</span>
         <span>mins</span>
-      </TimeBox>
-      <TimeBox>
+      </TimeModule>
+      <TimeModule>
         <span>{timeElapsed.seconds}</span>
         <span>secs</span>
-      </TimeBox>
+      </TimeModule>
     </Container>
   );
 };

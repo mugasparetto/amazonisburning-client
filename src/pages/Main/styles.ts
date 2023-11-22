@@ -34,10 +34,81 @@ export const Container = styled.main`
   }
 `;
 
+export const TextStrip = styled.div`
+  color: ${colors.neutral.white};
+  position: absolute;
+  width: 100vh;
+  left: 4rem;
+  bottom: 0;
+  transform-origin: left bottom;
+  transform: rotateZ(-90deg);
+  opacity: 0.64;
+
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.09rem;
+  text-transform: uppercase;
+
+  --gap: 0rem;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+
+  .marquee__content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: 100%;
+    animation: scroll 20s linear infinite;
+    list-style: square;
+  }
+
+  .marquee__content > * {
+    padding-left: 0.5rem;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  /* .marquee {
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+  }
+
+  .marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 60s linear infinite;
+  }
+
+  .marquee2 span {
+    animation-delay: 30s;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-100%, 0);
+    }
+  } */
+`;
+
 export const Content = styled.div<ContentProps>`
   color: ${colors.neutral.white};
   position: absolute;
-  left: 6rem;
+  left: 9rem;
   top: 50%;
   transform: translate(0, -50%);
 
@@ -55,13 +126,13 @@ export const Description = styled.h3`
 `;
 
 export const Help = styled(Tooltip)`
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
 `;
 
 export const TimeContainer = styled.div`
-  position: absolute;
-  bottom: 4rem;
-  left: 6rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
 
   > span {
     color: ${colors.neutral.white};

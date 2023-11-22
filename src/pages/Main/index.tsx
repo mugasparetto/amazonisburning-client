@@ -1,11 +1,16 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
-import { Container, Content, Description, Help, TimeContainer } from './styles';
+import {
+  Container,
+  TextStrip,
+  Content,
+  Description,
+  TimeContainer,
+} from './styles';
 import Portal from '../../components/Portal';
 import TimeElapsed from '../../components/TimeElapsed';
 
 import bg from '../../assets/background-video.mp4';
-import HelpIcon from '../../assets/help-icon.svg';
 import { socket } from '../../socket';
 
 const Main: React.FC = () => {
@@ -35,19 +40,35 @@ const Main: React.FC = () => {
       <video id="background-video" autoPlay loop muted>
         <source src={bg} type="video/mp4" />
       </video>
+      <TextStrip>
+        <ul className="marquee__content">
+          <li>live data </li>
+          <li>live data </li>
+          <li>live data </li>
+          <li>live data </li>
+          <li>live data </li>
+          <li>live data </li>
+        </ul>
+
+        <ul aria-hidden="true" className="marquee__content">
+          <li>live data </li>
+          <li>live data </li>
+          <li>live data </li>
+          <li>live data </li>
+          <li>live data </li>
+          <li>live data </li>
+        </ul>
+      </TextStrip>
       <Content open={portalOpen}>
         <h1>{wildfiresCount}</h1>
         <Description>
-          Fires burning in the Amazon rainforest since Sunday morning
+          Fires burning in the Amazon rainforest since Sunday morning; it's
+          been:
         </Description>
-        <Help>
-          <img style={{ opacity: 0.8 }} src={HelpIcon} alt={'Question mark'} />
-        </Help>
+        <TimeContainer>
+          <TimeElapsed />
+        </TimeContainer>
       </Content>
-      <TimeContainer>
-        <span>time elapsed</span>
-        <TimeElapsed />
-      </TimeContainer>
       <Portal portalToggle={handlePortalToggle} />
     </Container>
   );

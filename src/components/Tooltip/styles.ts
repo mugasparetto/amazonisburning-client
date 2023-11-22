@@ -18,7 +18,7 @@ export const Container = styled.div`
     line-height: 1.5rem;
 
     position: absolute;
-    left: 3.25rem;
+    left: 2.5rem;
 
     &::before {
       content: '';
@@ -27,6 +27,7 @@ export const Container = styled.div`
       border-width: 0.5rem 0.5rem 0 0.5rem;
       transform: rotate(90deg);
       position: absolute;
+      top: 0.5rem;
       left: -0.75rem;
     }
   }

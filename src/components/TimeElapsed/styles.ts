@@ -4,25 +4,26 @@ import { colors } from '../../constants/colors';
 
 export const Container = styled.div`
   display: flex;
+  font-size: 1.5rem;
+  letter-spacing: 0.09rem;
+
+  > span {
+    font-weight: bold;
+  }
 `;
 
-export const TimeBox = styled.div`
-  border: solid 2px ${colors.neutral.white};
-  margin-right: 0.5rem;
-  padding: 1rem 0;
-  width: 5rem;
-  color: white;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+export const TimeModule = styled.div`
+  color: ${colors.neutral.white};
 
   > span:first-child {
-    font-size: 2rem;
     font-weight: bold;
+    margin-right: 0.25rem;
+    width: 2rem;
   }
 
   > span:last-child {
-    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin-right: 0.75rem;
+    opacity: 0.8;
   }
 `;
