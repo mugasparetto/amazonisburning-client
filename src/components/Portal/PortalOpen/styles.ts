@@ -24,7 +24,7 @@ export const Content = styled.div`
   width: 100%;
   position: relative;
 
-  button {
+  > button {
     position: absolute;
     right: 4rem;
     top: 4.5rem;

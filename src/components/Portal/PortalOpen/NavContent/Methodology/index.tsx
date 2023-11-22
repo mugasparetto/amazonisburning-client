@@ -1,15 +1,14 @@
 import React, { useCallback } from 'react';
-import {} from './styles';
+import { Link } from './styles';
 
 interface MethodologyProps {
   setActiveTab: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const Methodology: React.FC<MethodologyProps> = ({ setActiveTab }) => {
-  const handleClick = useCallback((event: React.MouseEvent<HTMLElement>) => {
-    event.preventDefault();
+  const handleClick = useCallback(() => {
     setActiveTab('fires');
-  }, []);
+  }, [setActiveTab]);
 
   return (
     <>
@@ -48,10 +47,7 @@ const Methodology: React.FC<MethodologyProps> = ({ setActiveTab }) => {
         It is also important to notice that such satellite images do not
         differentiate between intentionally burnt areas and spontaneous fires.
         Both are linked to global warming, and more information regarding this
-        is displayed in the{' '}
-        <a href="" onClick={handleClick}>
-          WHY SO MANY FIRES
-        </a>{' '}
+        is displayed in the <Link onClick={handleClick}>WHY SO MANY FIRES</Link>{' '}
         section.
       </p>
       <p>
