@@ -12,6 +12,7 @@ import 'leaflet/dist/leaflet.css';
 import { amazon } from '../../../../../assets/amazon';
 import api from '../../../../../services/api';
 import { ErrorContainer } from './styles';
+import './styles.css';
 
 const Map: React.FC = () => {
   const [wildfires, setWildfires] = useState([]);
@@ -88,6 +89,10 @@ const Map: React.FC = () => {
           <MarkerClusterGroup
             disableClusteringAtZoom={5}
             spiderfyOnMaxZoom={false}
+            polygonOptions={{
+              color: '#FC7A41',
+              weight: 2,
+            }}
           >
             {wildfires.map(([lat, long, _, count]) => (
               <CircleMarker
