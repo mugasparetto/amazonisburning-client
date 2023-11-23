@@ -37,13 +37,13 @@ const Map: React.FC = () => {
 
   const calculatePointSize = useCallback((count: number) => {
     if (count >= 1 && count < 20) {
-      return 2;
-    } else if (count >= 20 && count < 60) {
       return 6;
-    } else if (count >= 60 && count < 100) {
+    } else if (count >= 20 && count < 60) {
       return 10;
-    } else if (count >= 100) {
+    } else if (count >= 60 && count < 100) {
       return 14;
+    } else if (count >= 100) {
+      return 18;
     }
   }, []);
 
