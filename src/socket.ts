@@ -4,8 +4,4 @@ import { io } from 'socket.io-client';
 // const URL = 'https://amazonisburning-6f8fe83a90dd.herokuapp.com';
 const URL = process.env.REACT_APP_API_URL;
 
-export const socket = io(`${URL}`, {
-  extraHeaders: {
-    'Access-Control-Allow-Origin': '*',
-  },
-});
+export const socket = io(`${URL}`);
