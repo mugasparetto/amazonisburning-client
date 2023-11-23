@@ -1,10 +1,11 @@
 [[redirects]]
-from = "/"
-to = "http://amazonisburning-6f8fe83a90dd.herokuapp.com"
-status = 200
-force = true
-headers = {X-From = "Netlify"}
+  from = "/"
+  to = "http://amazonisburning-6f8fe83a90dd.herokuapp.com"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
 [[headers]]
-for = "/”
-[headers.values]
-Access-Control-Allow-Origin = "*"
+  for = "/”
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
