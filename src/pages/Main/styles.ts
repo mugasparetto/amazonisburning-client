@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import Tooltip from '../../components/Tooltip';
-
 import { colors } from '../../constants/colors';
 
 interface ContentProps {
@@ -77,32 +75,6 @@ export const TextStrip = styled.div`
       transform: translateX(calc(-100% - var(--gap)));
     }
   }
-
-  /* .marquee {
-    margin: 0 auto;
-    white-space: nowrap;
-    overflow: hidden;
-    position: absolute;
-  }
-
-  .marquee span {
-    display: inline-block;
-    padding-left: 100%;
-    animation: marquee 60s linear infinite;
-  }
-
-  .marquee2 span {
-    animation-delay: 30s;
-  }
-
-  @keyframes marquee {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(-100%, 0);
-    }
-  } */
 `;
 
 export const Content = styled.div<ContentProps>`
@@ -125,10 +97,6 @@ export const Description = styled.h3`
   max-width: 41rem;
 `;
 
-export const Help = styled(Tooltip)`
-  /* margin-top: 1rem; */
-`;
-
 export const TimeContainer = styled.div`
   margin-top: 1rem;
   display: flex;
@@ -142,5 +110,45 @@ export const TimeContainer = styled.div`
     text-transform: uppercase;
     margin-bottom: 1rem;
     display: block;
+  }
+`;
+
+export const AboutLink = styled.span`
+  color: ${colors.neutral.white};
+  font-weight: bold;
+  text-decoration: underline;
+
+  cursor: pointer;
+
+  position: absolute;
+  left: 9rem;
+  bottom: 2.8rem;
+`;
+
+interface AboutContainerProps {
+  open: boolean;
+}
+
+export const AboutContainer = styled.div<AboutContainerProps>`
+  background: ${colors.neutral.white};
+  width: 40rem;
+  padding: 3rem 3rem 2rem 2rem;
+
+  font-weight: 500;
+
+  position: absolute;
+  left: 9rem;
+  bottom: ${(props) => (props.open ? '0' : '-42rem')};
+
+  transition: bottom 0.4s ease-in-out;
+
+  button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  p {
+    margin-bottom: 0;
   }
 `;

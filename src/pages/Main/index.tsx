@@ -6,16 +6,20 @@ import {
   Content,
   Description,
   TimeContainer,
+  AboutLink,
+  AboutContainer,
 } from './styles';
 import Portal from '../../components/Portal';
 import TimeElapsed from '../../components/TimeElapsed';
 
 import bg from '../../assets/background-video.mp4';
+import Close from '../../assets/close.svg';
 import { socket } from '../../socket';
 
 const Main: React.FC = () => {
   const [wildfiresCount, setWildfiresCount] = useState(0);
   const [portalOpen, setPortalOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
 
   useEffect(() => {
     function updateWildfiresCount(value: number) {
@@ -69,6 +73,46 @@ const Main: React.FC = () => {
           <TimeElapsed />
         </TimeContainer>
       </Content>
+      <AboutLink
+        onClick={() => {
+          setAboutOpen(true);
+        }}
+      >
+        About this project
+      </AboutLink>
+      <AboutContainer open={aboutOpen}>
+        <button
+          onClick={() => {
+            setAboutOpen(false);
+          }}
+        >
+          <img src={Close} alt="Close icon" />
+        </button>
+        <p>
+          This project was developed by{' '}
+          <a
+            href="https://linkedin.com/in/mugasparetto"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Murilo Gasparetto
+          </a>{' '}
+          in partnership with{' '}
+          <a href="https://ipam.org.br/" target="_blank" rel="noreferrer">
+            IPAM Amazonia
+          </a>
+          , which also kindly shared the video clips seen. The data shown is
+          being gathered in near real-time from the{' '}
+          <a
+            href="http://terrabrasilis.dpi.inpe.br/queimadas/portal/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Brazilian government
+          </a>
+          .
+        </p>
+      </AboutContainer>
       <Portal portalToggle={handlePortalToggle} />
     </Container>
   );
