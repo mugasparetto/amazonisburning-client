@@ -12,15 +12,8 @@ const Tooltip: React.FC<TooltipProps> = ({ children, className }) => {
     <Container className={className}>
       {children}
       <span>
-        The data shown is being gathered in near real-time from the{' '}
-        <a
-          href="http://terrabrasilis.dpi.inpe.br/queimadas/portal/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Brazilian government
-        </a>
-        . Repeated focuses are not counted more than once.
+        The data shown is being gathered in near real-time from the Brazilian
+        government. Repeated focuses are not counted more than once.
       </span>
     </Container>
   );

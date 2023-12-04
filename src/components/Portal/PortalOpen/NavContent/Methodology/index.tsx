@@ -17,15 +17,6 @@ const Methodology: React.FC<MethodologyProps> = ({ setActiveTab }) => {
         The GOES-16 satellite has been chosen for this application as the
         reference satellite because it generates data on a steady basis, with
         ten-minute intervals - meaning that the information is near real-time.
-        More information about the GOES-16 can be{' '}
-        <a
-          href="https://www.star.nesdis.noaa.gov/goes/sector.php?sat=G16&sector=nsa"
-          target="_blank"
-          rel="noreferrer"
-        >
-          found here
-        </a>
-        .
       </p>
       <p>
         The satellite information is gathered by INPE (Instituto Nacional de
