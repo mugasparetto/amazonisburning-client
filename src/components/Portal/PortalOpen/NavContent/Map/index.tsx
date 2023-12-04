@@ -11,7 +11,7 @@ import 'leaflet/dist/leaflet.css';
 
 import { amazon } from '../../../../../assets/amazon';
 import api from '../../../../../services/api';
-import { ErrorContainer } from './styles';
+import { ContentContainer } from './styles';
 import './styles.css';
 
 const Map: React.FC = () => {
@@ -29,7 +29,6 @@ const Map: React.FC = () => {
       })
       .catch((error) => {
         setError(true);
-        //display error message
       })
       .finally(() => {
         setLoading(false);
@@ -129,11 +128,16 @@ const Map: React.FC = () => {
           />
         </MapContainer>
       )}
-      {error && (
-        <ErrorContainer>
+      {error && !loading && (
+        <ContentContainer>
           <p>An error has happened while downloading the locations.</p>
           <p>Refresh the page and check your connection.</p>
-        </ErrorContainer>
+        </ContentContainer>
+      )}
+      {loading && !error && (
+        <ContentContainer>
+          <span className="loader"></span>
+        </ContentContainer>
       )}
     </>
   );

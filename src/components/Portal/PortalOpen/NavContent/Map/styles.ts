@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import { colors } from '../../../../../constants/colors';
 
-export const ErrorContainer = styled.div`
+export const ContentContainer = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 
   > p {
     text-align: center;
