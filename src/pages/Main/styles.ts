@@ -106,7 +106,11 @@ export const Content = styled.div<ContentProps>`
 
 export const Description = styled.h3`
   opacity: 0.8;
-  max-width: 32rem;
+  max-width: 28rem;
+
+  @media ${mediaQueries.smallScreens} {
+    max-width: 32rem;
+  }
 
   @media ${mediaQueries.largeScreensAndAbove} {
     max-width: 41rem;
@@ -137,8 +141,14 @@ export const AboutLink = styled.span`
   cursor: pointer;
 
   position: absolute;
-  left: 9rem;
-  bottom: 2.8rem;
+  right: 2rem;
+  top: 2.8rem;
+
+  @media ${mediaQueries.smallScreens} {
+    left: 9rem;
+    bottom: 2.8rem;
+    top: auto;
+  }
 `;
 
 interface AboutContainerProps {
@@ -147,16 +157,27 @@ interface AboutContainerProps {
 
 export const AboutContainer = styled.div<AboutContainerProps>`
   background: ${colors.neutral.white};
-  width: 35%;
   padding: 3rem 3rem 2rem 2rem;
 
   font-weight: 500;
 
+  width: 32rem;
   position: absolute;
-  left: 9rem;
-  bottom: ${(props) => (props.open ? '0' : '-42rem')};
+  right: 0;
+  top: ${(props) => (props.open ? '0' : '-17rem')};
 
-  transition: bottom 0.4s ease-in-out;
+  transition: top 0.4s ease-in-out;
+
+  @media ${mediaQueries.smallScreens} {
+    width: 30rem;
+    position: absolute;
+    right: auto;
+    top: auto;
+    left: 9rem;
+    bottom: ${(props) => (props.open ? '0' : '-42rem')};
+
+    transition: bottom 0.4s ease-in-out;
+  }
 
   @media ${mediaQueries.largeScreensAndAbove} {
     width: 40rem;

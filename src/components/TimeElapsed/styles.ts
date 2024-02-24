@@ -5,8 +5,12 @@ import { mediaQueries } from '../../constants/mediaQueries';
 
 export const Container = styled.div`
   display: flex;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   letter-spacing: 0.09rem;
+
+  @media ${mediaQueries.smallScreens} {
+    font-size: 1.25rem;
+  }
 
   @media ${mediaQueries.largeScreensAndAbove} {
     font-size: 1.5rem;

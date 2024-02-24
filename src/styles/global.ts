@@ -44,8 +44,13 @@ export default createGlobalStyle`
 
   h1 {
     font-weight: bold;
-    font-size: 14rem;
+    font-size: 10rem;
+    margin: -1rem 0;
+
+    @media ${mediaQueries.smallScreens} {
+      font-size: 14rem;
     margin: -2rem 0;
+    }
 
     @media ${mediaQueries.largeScreensAndAbove} {
       font-size: 20rem;
@@ -68,7 +73,11 @@ export default createGlobalStyle`
 
   h3 {
     font-weight: 500;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+
+    @media ${mediaQueries.smallScreens} {
+      font-size: 1.75rem;
+    }
 
     @media ${mediaQueries.largeScreensAndAbove} {
       font-size: 2.5rem;
