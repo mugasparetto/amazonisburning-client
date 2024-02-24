@@ -18,6 +18,12 @@
   background-color: rgba(252, 122, 65, 0.8);
 }
 
+.marker-cluster div span {
+  line-height: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
 .loader {
   font-size: 10px;
   width: 1em;

@@ -4,6 +4,7 @@ import Bold from '../assets/PPNeueMontrealBold.otf';
 import Medium from '../assets/PPNeueMontrealMedium.otf';
 import Book from '../assets/PPNeueMontrealBook.otf';
 import { colors } from '../constants/colors';
+import { mediaQueries } from '../constants/mediaQueries';
 
 export default createGlobalStyle`
  @font-face {
@@ -43,21 +44,35 @@ export default createGlobalStyle`
 
   h1 {
     font-weight: bold;
-    font-size: 20rem;
-    margin: -3rem 0;
+    font-size: 14rem;
+    margin: -2rem 0;
+
+    @media ${mediaQueries.largeScreensAndAbove} {
+      font-size: 20rem;
+      margin: -3rem 0;
+    }
   }
 
   h2 {
     font-weight: 500;
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 0.18rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1.75rem;
+
+    @media ${mediaQueries.largeScreensAndAbove} {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+    }
   }
 
   h3 {
     font-weight: 500;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
+
+    @media ${mediaQueries.largeScreensAndAbove} {
+      font-size: 2.5rem;
+    }
   }
 
   h4 {
@@ -77,9 +92,15 @@ export default createGlobalStyle`
   }
 
   p, ol li {
-    margin-bottom: 1.5rem;
-    font-size: 1.25rem;
-    line-height: 1.75rem; 
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.5rem; 
+
+    @media ${mediaQueries.largeScreensAndAbove} {
+      margin-bottom: 1.5rem;
+      font-size: 1.25rem;
+      line-height: 1.75rem; 
+    }
   }
 
   ol {

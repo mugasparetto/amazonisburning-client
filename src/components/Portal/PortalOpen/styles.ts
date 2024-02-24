@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mediaQueries } from '../../../constants/mediaQueries';
 
 export const Container = styled.div`
   display: flex;
@@ -6,8 +7,12 @@ export const Container = styled.div`
 `;
 
 export const Navigation = styled.nav`
-  padding: 2.5rem;
+  padding: 1.5rem;
   border-right: solid 2px black;
+
+  @media ${mediaQueries.largeScreensAndAbove} {
+    padding: 2.5rem;
+  }
 
   ul {
     list-style: none;
@@ -27,6 +32,6 @@ export const Content = styled.div`
   > button {
     position: absolute;
     right: 4rem;
-    top: 4.5rem;
+    top: 4.3rem;
   }
 `;

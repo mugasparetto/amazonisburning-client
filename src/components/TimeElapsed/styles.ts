@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 
 import { colors } from '../../constants/colors';
+import { mediaQueries } from '../../constants/mediaQueries';
 
 export const Container = styled.div`
   display: flex;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   letter-spacing: 0.09rem;
 
-  > span {
-    font-weight: bold;
+  @media ${mediaQueries.largeScreensAndAbove} {
+    font-size: 1.5rem;
   }
 `;
 

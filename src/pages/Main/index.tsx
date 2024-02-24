@@ -89,10 +89,28 @@ const Main: React.FC = () => {
           <img src={Close} alt="Close icon" />
         </button>
         <p>
-          This project was developed by Murilo Gasparetto in partnership with
-          IPAM Amazonia , which also kindly shared the video clips seen. The
-          data shown is being gathered in near real-time from the Brazilian
-          government.
+          This project was developed by{' '}
+          <a
+            href="https://linkedin.com/in/mugasparetto"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Murilo Gasparetto
+          </a>{' '}
+          in partnership with{' '}
+          <a href="https://ipam.org.br/" target="_blank" rel="noreferrer">
+            IPAM Amazonia
+          </a>
+          , which also kindly shared the video clips seen. The data shown is
+          being gathered in near real-time from the{' '}
+          <a
+            href="http://terrabrasilis.dpi.inpe.br/queimadas/portal/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Brazilian government
+          </a>
+          .
         </p>
       </AboutContainer>
       <Portal portalToggle={handlePortalToggle} />

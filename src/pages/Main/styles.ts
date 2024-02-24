@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { colors } from '../../constants/colors';
+import { mediaQueries } from '../../constants/mediaQueries';
 
 interface ContentProps {
   open: boolean;
@@ -42,7 +43,7 @@ export const TextStrip = styled.div`
   transform: rotateZ(-90deg);
   opacity: 0.64;
 
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.09rem;
   text-transform: uppercase;
@@ -52,6 +53,10 @@ export const TextStrip = styled.div`
   overflow: hidden;
   user-select: none;
   gap: var(--gap);
+
+  @media ${mediaQueries.largeScreensAndAbove} {
+    font-size: 1.5rem;
+  }
 
   .marquee__content {
     flex-shrink: 0;
@@ -85,16 +90,25 @@ export const Content = styled.div<ContentProps>`
   transform: translate(0, -50%);
 
   h1 {
-    transform: ${(props) => (props.open ? 'scale(0.5)' : 'scale(1)')};
-    margin-bottom: ${(props) => props.open && '-1.5rem'};
+    transform: ${(props) => (props.open ? 'scale(0.6)' : 'scale(1)')};
+    margin-bottom: ${(props) => props.open && '-1rem'};
     transform-origin: bottom left;
     transition: all 0.4s;
+
+    @media ${mediaQueries.largeScreensAndAbove} {
+      transform: ${(props) => (props.open ? 'scale(0.5)' : 'scale(1)')};
+      margin-bottom: ${(props) => props.open && '-1.5rem'};
+    }
   }
 `;
 
 export const Description = styled.h3`
   opacity: 0.8;
-  max-width: 41rem;
+  max-width: 32rem;
+
+  @media ${mediaQueries.largeScreensAndAbove} {
+    max-width: 41rem;
+  }
 `;
 
 export const TimeContainer = styled.div`
@@ -131,7 +145,7 @@ interface AboutContainerProps {
 
 export const AboutContainer = styled.div<AboutContainerProps>`
   background: ${colors.neutral.white};
-  width: 40rem;
+  width: 35%;
   padding: 3rem 3rem 2rem 2rem;
 
   font-weight: 500;
@@ -141,6 +155,10 @@ export const AboutContainer = styled.div<AboutContainerProps>`
   bottom: ${(props) => (props.open ? '0' : '-42rem')};
 
   transition: bottom 0.4s ease-in-out;
+
+  @media ${mediaQueries.largeScreensAndAbove} {
+    width: 40rem;
+  }
 
   button {
     position: absolute;
