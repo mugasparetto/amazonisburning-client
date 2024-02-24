@@ -21,7 +21,7 @@ const NavItem: React.FC<NavItemProps> = ({
   const handleClick = useCallback(() => {
     setActiveTab(id);
     toggleMenu();
-  }, [id, setActiveTab]);
+  }, [id, setActiveTab, toggleMenu]);
 
   return (
     <Container active={activeTab === id} style={style} onClick={handleClick}>
