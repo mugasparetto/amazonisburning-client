@@ -8,7 +8,7 @@ interface ContentProps {
 }
 
 export const Container = styled.main`
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
   position: relative;
   background-image: linear-gradient(
@@ -21,7 +21,7 @@ export const Container = styled.main`
   background-size: cover;
 
   #background-video {
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
     object-fit: cover;
     position: fixed;
@@ -36,8 +36,8 @@ export const Container = styled.main`
 export const TextStrip = styled.div`
   color: ${colors.neutral.white};
   position: absolute;
-  width: 100vh;
-  left: 4rem;
+  width: 100dvh;
+  left: 2rem;
   bottom: 0;
   transform-origin: left bottom;
   transform: rotateZ(-90deg);
@@ -54,6 +54,10 @@ export const TextStrip = styled.div`
   user-select: none;
   gap: var(--gap);
 
+  @media ${mediaQueries.tablet} {
+    left: 4rem;
+  }
+
   @media ${mediaQueries.largeScreensAndAbove} {
     font-size: 1.5rem;
   }
@@ -69,7 +73,9 @@ export const TextStrip = styled.div`
   }
 
   .marquee__content > * {
-    padding-left: 0.5rem;
+    @media ${mediaQueries.tablet} {
+      padding-left: 0.5rem;
+    }
   }
 
   @keyframes scroll {
@@ -85,9 +91,13 @@ export const TextStrip = styled.div`
 export const Content = styled.div<ContentProps>`
   color: ${colors.neutral.white};
   position: absolute;
-  left: 9rem;
+  left: 4rem;
   top: 50%;
   transform: translate(0, -50%);
+
+  @media ${mediaQueries.tablet} {
+    left: 9rem;
+  }
 
   h1 {
     @media ${mediaQueries.mediumScreens} {
@@ -106,7 +116,11 @@ export const Content = styled.div<ContentProps>`
 
 export const Description = styled.h3`
   opacity: 0.8;
-  max-width: 28rem;
+  max-width: 18rem;
+
+  @media ${mediaQueries.tablet} {
+    max-width: 28rem;
+  }
 
   @media ${mediaQueries.smallScreens} {
     max-width: 32rem;
@@ -161,12 +175,16 @@ export const AboutContainer = styled.div<AboutContainerProps>`
 
   font-weight: 500;
 
-  width: 32rem;
+  width: 100%;
   position: absolute;
   right: 0;
   top: ${(props) => (props.open ? '0' : '-17rem')};
 
   transition: top 0.4s ease-in-out;
+
+  @media ${mediaQueries.tablet} {
+    width: 32rem;
+  }
 
   @media ${mediaQueries.smallScreens} {
     width: 30rem;

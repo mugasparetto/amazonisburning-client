@@ -13,4 +13,9 @@ export const Container = styled.div`
 export const ScrollContainer = styled.div`
   overflow: auto;
   padding-right: 1rem;
+
+  p:last-child,
+  ol li:last-child {
+    margin-bottom: 2.5rem;
+  }
 `;

@@ -41,7 +41,7 @@ const Main: React.FC = () => {
 
   return (
     <Container>
-      <video id="background-video" autoPlay loop muted>
+      <video id="background-video" autoPlay loop muted playsInline>
         <source src={bg} type="video/mp4" />
       </video>
       <TextStrip>

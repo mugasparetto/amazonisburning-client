@@ -10,13 +10,17 @@ interface ContainerProps {
 export const Container = styled.div<ContainerProps>`
   cursor: ${(props) => (props.open ? 'auto' : 'pointer')};
   background: ${colors.neutral.white};
-  padding: ${(props) => (props.open ? 0 : '2rem')};
-  height: ${(props) => (props.open ? '100vh' : 'auto')};
+  padding: ${(props) => (props.open ? 0 : '1rem')};
+  height: ${(props) => (props.open ? '100dvh' : 'auto')};
   width: ${(props) => (props.open ? '100vw' : 'auto')};
 
   position: absolute;
   bottom: 0;
   right: 0;
+
+  @media ${mediaQueries.tablet} {
+    padding: ${(props) => (props.open ? 0 : '2rem')};
+  }
 
   @media ${mediaQueries.mediumScreens} {
     width: ${(props) => (props.open ? '50vw' : 'auto')};
@@ -26,8 +30,11 @@ export const Container = styled.div<ContainerProps>`
     padding: ${(props) => (props.open ? 0 : '2.5rem')};
   }
 
-  span:not(.marker-cluster div span, .leaflet-control-zoom a span) {
+  span {
     font-size: 1rem;
+  }
+
+  span:not(.marker-cluster div span, .leaflet-control-zoom a span) {
     font-weight: 700;
     line-height: normal;
     letter-spacing: 0.09rem;
@@ -44,7 +51,11 @@ export const CTA = styled.div`
   align-items: center;
 
   > span {
-    font-size: 1.25rem;
+    font-size: 1rem;
+
+    @media ${mediaQueries.tablet} {
+      font-size: 1.25rem;
+    }
 
     @media ${mediaQueries.largeScreensAndAbove} {
       font-size: 1.5rem;
