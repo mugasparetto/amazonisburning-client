@@ -12,11 +12,15 @@ export const Container = styled.div<ContainerProps>`
   background: ${colors.neutral.white};
   padding: ${(props) => (props.open ? 0 : '2rem')};
   height: ${(props) => (props.open ? '100vh' : 'auto')};
-  width: ${(props) => (props.open ? '50vw' : 'auto')};
+  width: ${(props) => (props.open ? '100vw' : 'auto')};
 
   position: absolute;
   bottom: 0;
   right: 0;
+
+  @media ${mediaQueries.mediumScreens} {
+    width: ${(props) => (props.open ? '50vw' : 'auto')};
+  }
 
   @media ${mediaQueries.largeScreensAndAbove} {
     padding: ${(props) => (props.open ? 0 : '2.5rem')};

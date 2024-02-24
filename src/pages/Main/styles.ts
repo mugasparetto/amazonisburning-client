@@ -90,10 +90,12 @@ export const Content = styled.div<ContentProps>`
   transform: translate(0, -50%);
 
   h1 {
-    transform: ${(props) => (props.open ? 'scale(0.6)' : 'scale(1)')};
-    margin-bottom: ${(props) => props.open && '-1rem'};
-    transform-origin: bottom left;
-    transition: all 0.4s;
+    @media ${mediaQueries.mediumScreens} {
+      transform: ${(props) => (props.open ? 'scale(0.6)' : 'scale(1)')};
+      margin-bottom: ${(props) => props.open && '-1rem'};
+      transform-origin: bottom left;
+      transition: all 0.4s;
+    }
 
     @media ${mediaQueries.largeScreensAndAbove} {
       transform: ${(props) => (props.open ? 'scale(0.5)' : 'scale(1)')};

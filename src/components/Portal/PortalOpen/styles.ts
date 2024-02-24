@@ -25,13 +25,24 @@ export const Navigation = styled.nav`
 
 export const Content = styled.div`
   /* background: blue; */
-  padding: 4rem;
+  padding: 2.5rem;
   width: 100%;
+  max-width: 56rem;
   position: relative;
+  margin: 0 auto;
+
+  @media ${mediaQueries.mediumScreens} {
+    padding: 4rem;
+  }
 
   > button {
     position: absolute;
-    right: 4rem;
-    top: 4.3rem;
+    right: 2rem;
+    top: 2.8rem;
+
+    @media ${mediaQueries.mediumScreens} {
+      top: 4.3rem;
+      right: 4rem;
+    }
   }
 `;

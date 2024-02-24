@@ -30,7 +30,13 @@ const Fires: React.FC = () => {
           notice on the diagram below.
         </p>
         <img
-          style={{ width: '100%', margin: '1.5rem 0' }}
+          style={{
+            width: '100%',
+            margin: '2rem auto',
+            display: 'block',
+            maxWidth: '40rem',
+            textAlign: 'center',
+          }}
           src={FiresDiagram}
           alt="Diagram explaining the feedback loop happening in the Amazon rainforest"
         />
