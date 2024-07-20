@@ -59,9 +59,9 @@ $ yarn start
 
 ## :heavy_check_mark: Next steps
 - [ ] Get 100% on test coverage
-- [ ] Random logged user picture
-- [ ] Enhance sort bar animations
-- [ ] Switch from modal to side panel
+- [ ] Enhance animations
+- [ ] Add routes to different tabs
+- [ ] Optimise GET wildfires call
 
 ## :page_facing_up: License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
