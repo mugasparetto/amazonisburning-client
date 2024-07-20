@@ -45,7 +45,7 @@ It was deployed using [Netlify](https://www.netlify.com/)
 
 ### Clone the project
 ```bash
-$ git clone https://github.com/mugasparetto/izymob.git && cd izymob
+$ git clone https://github.com/mugasparetto/amazonisburning-client.git && cd amazonisburning-client
 ```
 
 ### Run these commands
