@@ -11,8 +11,9 @@ export const Container = styled.div<ContainerProps>`
   cursor: ${(props) => (props.open ? 'auto' : 'pointer')};
   background: ${colors.neutral.white};
   padding: ${(props) => (props.open ? 0 : '1rem')};
-  height: ${(props) => (props.open ? '100dvh' : 'auto')};
-  width: ${(props) => (props.open ? '100vw' : 'auto')};
+  height: ${(props) => (props.open ? '100vh' : '4rem')};
+  width: ${(props) => (props.open ? '100vw' : '18.5rem')};
+  transition: height 0.3s ease, width 0.3s ease, padding 0.3s ease;
 
   position: absolute;
   bottom: 0;
@@ -20,10 +21,12 @@ export const Container = styled.div<ContainerProps>`
 
   @media ${mediaQueries.tablet} {
     padding: ${(props) => (props.open ? 0 : '2rem')};
+    height: ${(props) => (props.open ? '100vh' : '6rem')};
+    width: ${(props) => (props.open ? '100vw' : '23.25rem')};
   }
 
   @media ${mediaQueries.mediumScreens} {
-    width: ${(props) => (props.open ? '50vw' : 'auto')};
+    width: ${(props) => (props.open ? '50vw' : '23.25rem')};
   }
 
   @media ${mediaQueries.largeScreensAndAbove} {
