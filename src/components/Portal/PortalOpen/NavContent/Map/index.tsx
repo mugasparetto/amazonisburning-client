@@ -16,24 +16,29 @@ import './styles.css';
 
 const Map: React.FC = () => {
   const [wildfires, setWildfires] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  // useEffect(() => {
-  //   setLoading(true);
-  //   api
-  //     .get('wildfires')
-  //     .then((response) => {
-  //       const { data } = response;
-  //       setWildfires(data);
-  //     })
-  //     .catch((error) => {
-  //       setError(true);
-  //     })
-  //     .finally(() => {
-  //       setLoading(false);
-  //     });
-  // }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      api
+        .get('wildfires')
+        .then((response) => {
+          const { data } = response;
+          setWildfires(data);
+        })
+        .catch((error) => {
+          setError(true);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    }, 350);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   const calculatePointSize = useCallback((count: number) => {
     if (count >= 1 && count < 20) {
@@ -63,7 +68,7 @@ const Map: React.FC = () => {
     <>
       <h2>Map</h2>
 
-      {/* {!loading && !error && (
+      {!loading && !error && (
         <MapContainer
           center={[-10.535474, -61.187286]}
           zoom={4.2}
@@ -127,7 +132,7 @@ const Map: React.FC = () => {
             attribution="Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ"
           />
         </MapContainer>
-      )} */}
+      )}
       {error && !loading && (
         <ContentContainer>
           <p>An error has happened while downloading the locations.</p>
