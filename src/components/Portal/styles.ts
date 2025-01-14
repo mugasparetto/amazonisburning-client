@@ -11,7 +11,7 @@ export const Container = styled.div<ContainerProps>`
   cursor: ${(props) => (props.open ? 'auto' : 'pointer')};
   background: ${colors.neutral.white};
   padding: ${(props) => (props.open ? 0 : '1rem')};
-  height: ${(props) => (props.open ? '100vh' : '4rem')};
+  height: ${(props) => (props.open ? '100dvh' : '4rem')};
   width: ${(props) => (props.open ? '100vw' : '18.5rem')};
   transition: height 0.3s ease, width 0.3s ease, padding 0.3s ease;
 
@@ -21,7 +21,7 @@ export const Container = styled.div<ContainerProps>`
 
   @media ${mediaQueries.tablet} {
     padding: ${(props) => (props.open ? 0 : '2rem')};
-    height: ${(props) => (props.open ? '100vh' : '6rem')};
+    height: ${(props) => (props.open ? '100dvh' : '6rem')};
     width: ${(props) => (props.open ? '100vw' : '23.25rem')};
   }
 
