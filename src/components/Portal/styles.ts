@@ -31,6 +31,7 @@ export const Container = styled.div<ContainerProps>`
 
   @media ${mediaQueries.largeScreensAndAbove} {
     padding: ${(props) => (props.open ? 0 : '2.5rem')};
+    width: ${(props) => (props.open ? '50vw' : '28rem')};
   }
 
   span {
