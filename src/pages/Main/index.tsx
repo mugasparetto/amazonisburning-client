@@ -66,7 +66,7 @@ const Main: React.FC = () => {
       <Content open={portalOpen}>
         <h1>{wildfiresCount}</h1>
         <Description>
-          Fires burning in the Amazon rainforest since January 16th
+          Fires burning in the Amazon rainforest since March 5th
         </Description>
         <TimeContainer>
           <TimeElapsed />
