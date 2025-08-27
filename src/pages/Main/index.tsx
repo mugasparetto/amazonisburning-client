@@ -14,26 +14,27 @@ import TimeElapsed from '../../components/TimeElapsed';
 
 import bg from '../../assets/background-video.mp4';
 import Close from '../../assets/close.svg';
-import { socket } from '../../socket';
+// import { socket } from '../../socket';
 
 const Main: React.FC = () => {
-  const [wildfiresCount, setWildfiresCount] = useState(0);
+  const [wildfiresCount, setWildfiresCount] = useState(1871);
   const [portalOpen, setPortalOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
 
-  useEffect(() => {
-    function updateWildfiresCount(value: number) {
-      setWildfiresCount(value);
-    }
+  // Uncomment to reconnect with backend
+  // useEffect(() => {
+  //   function updateWildfiresCount(value: number) {
+  //     setWildfiresCount(value);
+  //   }
 
-    socket.on('initial state', updateWildfiresCount);
-    socket.on('new wildfires count', updateWildfiresCount);
+  //   socket.on('initial state', updateWildfiresCount);
+  //   socket.on('new wildfires count', updateWildfiresCount);
 
-    return () => {
-      socket.off('initial state', updateWildfiresCount);
-      socket.off('new wildfires count', updateWildfiresCount);
-    };
-  }, []);
+  //   return () => {
+  //     socket.off('initial state', updateWildfiresCount);
+  //     socket.off('new wildfires count', updateWildfiresCount);
+  //   };
+  // }, []);
 
   const handlePortalToggle = useCallback((value: boolean) => {
     setPortalOpen(value);
@@ -66,7 +67,8 @@ const Main: React.FC = () => {
       <Content open={portalOpen}>
         <h1>{wildfiresCount}</h1>
         <Description>
-          Fires burning in the Amazon rainforest since March 5th
+          Fires burning in the Amazon rainforest since{' '}
+          {new Date().toLocaleString('default', { month: 'long' })} 1st
         </Description>
         <TimeContainer>
           <TimeElapsed />

@@ -10,30 +10,33 @@ import MarkerClusterGroup from 'react-leaflet-cluster';
 import 'leaflet/dist/leaflet.css';
 
 import { amazon } from '../../../../../assets/amazon';
-import api from '../../../../../services/api';
+import data from './data.json';
+// import api from '../../../../../services/api';
 import { ContentContainer } from './styles';
 import './styles.css';
 
 const Map: React.FC = () => {
-  const [wildfires, setWildfires] = useState([]);
+  const [wildfires, setWildfires] = useState(data);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      api
-        .get('wildfires')
-        .then((response) => {
-          const { data } = response;
-          setWildfires(data);
-        })
-        .catch((error) => {
-          setError(true);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    }, 350);
+      setLoading(false);
+      // Uncomment to reconnect with backend
+      // api
+      //   .get('wildfires')
+      //   .then((response) => {
+      //     const { data } = response;
+      //     setWildfires(data);
+      //   })
+      //   .catch((error) => {
+      //     setError(true);
+      //   })
+      //   .finally(() => {
+      //     setLoading(false);
+      //   });
+    }, 500);
 
     return () => {
       clearTimeout(timer);
@@ -98,15 +101,15 @@ const Map: React.FC = () => {
               weight: 2,
             }}
           >
-            {wildfires.map(([lat, long, _, count]) => (
+            {wildfires.map((w) => (
               <CircleMarker
-                center={[lat, long]}
-                radius={calculatePointSize(count)}
-                key={`${lat},${long}`}
+                center={[w.lat as number, w.lon]}
+                radius={calculatePointSize(w.count)}
+                key={`${w.lat},${w.lon}`}
                 pathOptions={{
                   stroke: false,
                   color: '#222',
-                  fillColor: calculatePointColor(count),
+                  fillColor: calculatePointColor(w.count),
                   weight: 2,
                   fillOpacity: 0.6,
                 }}
@@ -122,7 +125,7 @@ const Map: React.FC = () => {
                 }}
               >
                 <Tooltip>
-                  Recurrence: {count} {count > 1 ? 'times' : 'time'}
+                  Recurrence: {w.count} {w.count > 1 ? 'times' : 'time'}
                 </Tooltip>
               </CircleMarker>
             ))}

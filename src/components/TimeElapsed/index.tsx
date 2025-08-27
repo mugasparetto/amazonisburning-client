@@ -3,7 +3,10 @@ import moment from 'moment';
 
 import { Container, TimeModule } from './styles';
 
-const initialDate = new Date('2025-03-05T00:00:00.000Z');
+const thisMonth = new Date().getMonth();
+const initialDate = new Date(
+  `2025-${(thisMonth + 1).toString().padStart(2, '0')}-01T00:00:00.000Z`
+);
 
 const TimeElapsed: React.FC = () => {
   const [timeElapsed, setTimeElapsed] = useState({
