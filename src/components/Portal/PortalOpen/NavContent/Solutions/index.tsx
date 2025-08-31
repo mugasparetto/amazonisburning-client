@@ -20,14 +20,10 @@ const Solutions: React.FC = () => {
         </p>
         <ol>
           <li>
-            <strong>Designation of public forests:</strong> the non-designated
-            public forests are the ones mainly affected by deforestation, as
-            they are awaiting a status of either ‘land to be conserved’ or ‘land
-            to be sustainably used’, encouraging illegal possession of the land
-            and its uncontrolled deforestation. There is a lack of oversight in
-            these regions and designating the public forests as a conservational
-            unit, indigenous land, or any other category would ensure their
-            appropriate usage.
+            <strong>Designation of public forests:</strong> undesignated areas
+            face high deforestation, often illegal, due to weak oversight;
+            proper designation (conservation units, indigenous lands, etc.)
+            would ensure sustainable use.
           </li>
           <li>
             <strong>Conservation incentives for private areas:</strong> measures
@@ -36,20 +32,16 @@ const Solutions: React.FC = () => {
           </li>
           <li>
             <strong>Increase agricultural productivity:</strong> the lack of
-            productivity in livestock generates a feeling that the farmers need
-            more land to accomplish production goals, creating the need for more
-            deforestation when this could be addressed by simple techniques like
-            pasture rotation and crop-livestock-forest integration. Avoiding
-            monoculture would also be interesting, as this practice decreases
-            biodiversity.
+            productivity in livestock makes it seem that farmers need more land
+            to achieve their production goals, which could drive more
+            deforestation. Techniques such as pasture rotation,
+            crop-livestock-forest integration, and avoiding monoculture can
+            reduce this pressure.
           </li>
           <li>
-            <strong>Strengthening environmental control:</strong> Creating laws
-            and incentives to protect the forest and supervising their
-            implementation could potentially help the Amazon get back on track.
-            This has been done before and proved to be economically efficient
-            and ecologically adequate, but subsequent budget cuts undermined
-            their efficacy.
+            <strong>Strengthening environmental control:</strong> stronger laws,
+            incentives, and enforcement—previously proven effective—are needed
+            but have been weakened by budget cuts.
           </li>
         </ol>
       </ScrollContainer>

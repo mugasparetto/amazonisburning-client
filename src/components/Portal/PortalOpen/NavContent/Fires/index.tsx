@@ -9,25 +9,12 @@ const Fires: React.FC = () => {
       <h2>Why so many fires</h2>
       <ScrollContainer>
         <p>
-          Fires are a constant threat to the Amazon, and they are amplified by
-          positive feedback loops in which the damage caused by deforestation
-          and global warming are involved. The El Niño phenomenon, intensified
-          by climate change, causes severe droughts and depletes moisture from
-          the deep soil. When the trees then shed their leaves, the sunlight
-          heats and dries the forest interior. These leaves also form a layer of
-          fuel on the forest floor, thus undermining the forest's firebreaking
-          function and increasing the forest’s flammability.
-        </p>
-        <p>
-          At the same time, land use (cattle pasture, crop fields, etc) reduces
-          evapotranspiration from vegetation, resulting in even lesser amounts
-          of rainfall. The smoke emitted when the land is on fire or being
-          prepared by the slash-and-burn agricultural method also acts as a rain
-          inhibitor; it saturates the atmosphere with condensation nuclei, so
-          the water droplets do not get heavy enough to fall to the earth,
-          intensifying droughts. The fires become easily spreadable, destroying
-          more of the forest’s territory and feeding back this loop, as one can
-          notice on the diagram below.
+          Amazon fires are worsened by feedback loops involving deforestation,
+          land use, and climate change. El Niño-driven droughts dry the forest,
+          while leaf litter increases flammability. Reduced vegetation lowers
+          rainfall, and smoke from slash-and-burn agriculture further suppresses
+          rain. These factors make fires spread more easily, perpetuating a
+          cycle of forest loss and intensified drought.
         </p>
         <img
           style={{
