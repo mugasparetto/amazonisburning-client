@@ -16,8 +16,10 @@ import bg from '../../assets/background-video.mp4';
 import Close from '../../assets/close.svg';
 // import { socket } from '../../socket';
 
+const proportional = Math.floor((1871 * new Date().getDate()) / 31);
+
 const Main: React.FC = () => {
-  const [wildfiresCount, setWildfiresCount] = useState(1871);
+  const [wildfiresCount, setWildfiresCount] = useState(proportional);
   const [portalOpen, setPortalOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
 

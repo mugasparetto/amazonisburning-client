@@ -15,8 +15,10 @@ import data from './data.json';
 import { ContentContainer } from './styles';
 import './styles.css';
 
+const proportional = Math.floor((1871 * new Date().getDate()) / 31);
+
 const Map: React.FC = () => {
-  const [wildfires, setWildfires] = useState(data);
+  const [wildfires, setWildfires] = useState(data.filter((_, i) => i < proportional));
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
